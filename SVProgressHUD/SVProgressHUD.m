@@ -1305,7 +1305,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
         _statusLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
         _statusLabel.numberOfLines = 0;
     }
-    if(!_statusLabel.superview) {
+    if(![self.hudView.subviews containsObject:_statusLabel]) {
       [self.hudView.contentView addSubview:_statusLabel];
     }
     
@@ -1325,7 +1325,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     if(!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _imageViewSize.width, _imageViewSize.height)];
     }
-    if(!_imageView.superview) {
+    if(![self.hudView.subviews containsObject:_imageView]) {
         [self.hudView.contentView addSubview:_imageView];
     }
     
